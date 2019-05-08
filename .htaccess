@@ -1,0 +1,23 @@
+RewriteRule ^acceuil.html$   Welcome [L]
+RewriteRule ^destination.html$   Welcome/goListeDestination [L]
+RewriteRule ^service.html$   Welcome/goService [L]
+RewriteRule ^team.html$   Welcome/goTeam [L]
+RewriteRule ^blog.html$   Welcome/goBlog [L]
+RewriteRule ^login.html$   Welcome/goAdmin [L]
+RewriteRule ^backOffice.html$   LogController [L]
+RewriteRule ^backOffice-Destination.html$   BackController/destination [L]
+RewriteRule ^backOffice-Service.html$   BackController/service [L]
+RewriteRule ^backOffice-Team.html$   BackController/team [L]
+RewriteRule ^backOffice-Blog.html$   BackController/blog [L]
+
+RewriteRule ^singleDestination-([^/]+).html$   DestinationController/index/$1 [L]
+
+RewriteRule ^Ajouter-destination.html$   BackController/destination/add [L]
+RewriteRule ^Modifier-destination-([^/]+).html$   BackController/destination/edit/$1 [L]
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
